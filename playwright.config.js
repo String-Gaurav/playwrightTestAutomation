@@ -82,11 +82,8 @@ const config = defineConfig({
     {
       name: 'webkit',
       use: { 
-        ...devices['Desktop Safari'],
-        // WebKit-specific settings
-        contextOptions: {
-          permissions: ['camera', 'microphone']
-        }
+        ...devices['Desktop Safari']
+        // WebKit has limited permission support, keeping it simple
       },
     },
   ],
