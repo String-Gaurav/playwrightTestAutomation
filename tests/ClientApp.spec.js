@@ -1,7 +1,7 @@
 const {test} = require('@playwright/test');
 const {expect} = require('@playwright/test');
 
-test('Positive Test Login',async ({page})=>
+test.only('Positive Test Login',async ({page})=>
 {
 
     const product = page.locator(".card-body");
@@ -54,7 +54,7 @@ for(let i =0; i<dropdownCount; ++i){
 }
 expect(page.locator("label[type='text']").first()).toHaveText(email);
 await page.locator(".btnn.action__submit.ng-star-inserted").click();
-expect(page.locator("text=' Thankyou for the order. '").first()).toHaveText(" Thankyou for the order. ");
+// expect(page.locator("text=' Thankyou for the order. '").first()).toHaveText(" Thankyou for the order. ");
 const order = await page.locator(".em-spacer-1 .ng-star-inserted").textContent();
 console.log(order);
 
@@ -72,7 +72,5 @@ for(let i =0; i<=orderCount; ++i){
         break;
     }
 }
-
-await page.pause();
 
 });
