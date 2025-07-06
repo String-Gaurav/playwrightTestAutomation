@@ -52,11 +52,3 @@ jobs:
           name: playwright-junit-report
           path: playwright-report/results.xml
           retention-days: 30
-          
-      - name: Publish Test Results
-        if: always()
-        uses: dorny/test-reporter@v1
-        with:
-          name: Playwright Test Results
-          path: playwright-report/results.xml
-          reporter: java-junit
