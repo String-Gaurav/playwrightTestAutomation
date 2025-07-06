@@ -20,7 +20,7 @@ const { defineConfig, devices } = require('@playwright/test');
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 
 browserName : 'chromium',
-headless : false,
+headless : true,
 screenshot : 'on',
 trace : 'retain-on-faliure'
 
