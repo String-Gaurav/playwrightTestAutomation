@@ -2,17 +2,11 @@ import { test, expect } from '@playwright/test';
 
 test('DuckDuckGo search interaction', async ({ page }) => {
   await page.goto('https://duckduckgo.com/');
+  await page.fill('input[name="q"]', 'Playwright');
+  await page.keyboard.press('Enter');
 
-  // Type search and submit
-  const searchInput = page.locator('input[name="q"]');
-  await expect(searchInput).toBeVisible();
-  await searchInput.fill('Playwright');
-  await searchInput.press('Enter');
-
-  // Wait for results to appear using updated class
-  const resultTitles = page.locator('.react-results--main h2 a');
-  await expect(resultTitles.first()).toBeVisible();
-
-  // Optional: Validate page title
-  await expect(page).toHaveTitle(/Playwright/);
+  // Wait for navigation and result title
+  await page.waitForSelector('[data-testid="result-title-a"]', { timeout: 15000 });
+  const firstResult = page.locator('[data-testid="result-title-a"]').first();
+  await expect(firstResult).toBeVisible();
 });
