@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 
-test('file upload example', async ({ page }) => {
+test('@upload file upload example', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/upload');
   await page.setInputFiles('#file-upload', 'tests/tests/assets/sample.txt');
   await page.click('#file-submit');
   await expect(page.locator('#uploaded-files')).toHaveText('sample.txt');
 });
 
-test('file download example', async ({ page }) => {
+test('@download file download example', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/download');
 
   const [download] = await Promise.all([

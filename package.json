@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "regression": "npx playwright test",
+    "Upload": "npx playwright test --grep @upload",
+    "Download": "npx playwright test --grep @download"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.17"
+    "@playwright/test": "^1.53.2",
+    "@types/node": "^22.15.17",
+    "allure-playwright": "^3.3.0"
   }
 }

@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2268","@upload file upload example","Firefox","Thu Jul 10 11:22:35 CEST 2025","passed","Thu Jul 10 11:22:37 CEST 2025","","upload-download.spec.ts","",""
+"","3349","@upload file upload example","Chrome","Thu Jul 10 11:22:35 CEST 2025","passed","Thu Jul 10 11:22:38 CEST 2025","","upload-download.spec.ts","",""

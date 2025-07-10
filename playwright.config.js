@@ -12,7 +12,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   projects: [
-    { name: 'Chrome', use: { browserName: 'chromium' } },
-    { name: 'Firefox', use: { browserName: 'firefox' } },
+    { name: 'Chrome', use: { browserName: 'chromium', headless: true } },
+    { name: 'Firefox', use: { browserName: 'firefox', headless: true } },
   ],
 });
